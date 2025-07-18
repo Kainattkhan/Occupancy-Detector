@@ -72,7 +72,16 @@ class VideoTransformer(VideoTransformerBase):
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 # Stream from webcam
-webrtc_streamer(key="occupancy", video_processor_factory=VideoTransformer)
+# webrtc_streamer(key="occupancy", video_processor_factory=VideoTransformer)
+# Stream from webcam
+webrtc_streamer(
+    key="occupancy",
+    video_processor_factory=VideoTransformer,
+    rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    }
+)
+
 
 # Show log dataframe
 if st.button("📄 Show Log"):
