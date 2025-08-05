@@ -68,4 +68,3 @@ Make sure your webcam is enabled. The app will start in your browser.
 * You can tweak the confidence threshold and timeout duration inside the code.
 * Intended for demo/prototyping purposes, not production.
 
----
